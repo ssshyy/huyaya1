@@ -76,7 +76,7 @@
                                 });
                             </script>
                             <!-- /KindEditor -->
-                            <textarea id="content" name="content" style="width:780px;height:400px;" class="textArea"></textarea><br>
+                            <textarea id="content" name="content" style="width:780px;height:400px;" class="textArea"></textarea>
                         </td>
                         <input type="submit" value="添加分类" >
                     </form>
