@@ -46,38 +46,34 @@
                         <input type="hidden" name="id" value="{{$id}}">
                         新的子级:<input name="classname"><br>
 
-                        <td>
-                            <!-- KindEditor -->
-                            <link rel="stylesheet" href="js/kindeditor/themes/default/default.css" />
-                            <link rel="stylesheet" href="js/kindeditor/plugins/code/prettify.css" />
-                            <script charset="utf-8" src="{{asset('r')}}/js/kindeditor/kindeditor.js"></script>
-                            <script charset="utf-8" src="{{asset('r')}}/js/kindeditor/lang/zh_CN.js"></script>
-                            <script charset="utf-8" src="{{asset('r')}}/js/kindeditor/plugins/code/prettify.js"></script>
-                            <script>
-                                KindEditor.ready(function(K) {
-                                    var editor1 = K.create('textarea[name="content"]', {
-                                        cssPath : '../plugins/code/prettify.css',
-                                        uploadJson : '../php/upload_json.php',
-                                        fileManagerJson : '../php/file_manager_json.php',
-                                        allowFileManager : true,
-                                        afterCreate : function() {
-                                            var self = this;
-                                            K.ctrl(document, 13, function() {
-                                                self.sync();
-                                                K('form[name=example]')[0].submit();
-                                            });
-                                            K.ctrl(self.edit.doc, 13, function() {
-                                                self.sync();
-                                                K('form[name=example]')[0].submit();
-                                            });
-                                        }
-                                    });
-                                    prettyPrint();
-                                });
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <title>Document</title>
+                        </head>
+                        <body>
+                        <?php header('Content-type:text/html;charset=utf8'); ?>
+
+                            <script type="text/javascript" charset="utf-8" src="{{asset('ueditor')}}/ueditor.config.js"></script>
+                            <script type="text/javascript" charset="utf-8" src="{{asset('ueditor')}}/ueditor.all.min.js"> </script>
+                            <script type="text/javascript" charset="utf-8" src="{{asset('ueditor')}}/lang/zh-cn/zh-cn.js"></script>
+                            <textarea id="editor" name="content" type="text/plain" style="width:800px;height:500px;">
+
+                            </textarea>
+
+
+                            <script type="text/javascript">
+
+                            //实例化编辑器
+                            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                            var ue = UE.getEditor('editor');
                             </script>
-                            <!-- /KindEditor -->
-                            <textarea id="content" name="content" style="width:780px;height:400px;" class="textArea"></textarea><br>
-                        </td>
+
+
+                        </body>
+
+
                         <input type="submit" value="修改分类" >
                     </form>
 

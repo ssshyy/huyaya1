@@ -49,7 +49,7 @@ Route::any('/wxjadd','C\ViewController@helpaddym');//无限极分类添加页面
 Route::any('/wxjaddd','C\ViewController@helpadd');//无限极分类添加
 Route::any('/wxjupdate','C\ViewController@helpupdateym');//无限极分类添加
 Route::any('/wxjupdatee','C\ViewController@helpupdate');//无限极分类添加
+Route::any('/wxjdel','C\ViewController@wxjdel');//无限极分类添加
 
 
-
-Route::any('/ewmsc','C\ViewController@ewmsc');//无限极分类添加
+Route::any('/ewmsc','C\ViewController@ewmsc');//二维码生成

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -42,8 +43,8 @@
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-    <input type="text" name="name" placeholder="查询姓名" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <input type="text" name="tel" placeholder="查询手机号" /><input type="submit" value="查询用户">
+    {{--<input type="text" name="name" placeholder="查询姓名" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;--}}
+    {{--<input type="text" name="tel" placeholder="查询手机号" /><input type="submit" value="查询用户">--}}
 </form>
 <div class="tabs_content" style="">
     <div id="tab1" style="display: block;">
@@ -59,13 +60,14 @@
             </tr>
             </thead>
             <tbody>
+
             @foreach($list as $v)
                 <tr>
                     <td>{{str_repeat('-|',$v->le)}}</td>
                     <td>{{$v->classname}}</td>
                     <td><a href="{{url('/wxjadd')}}?id={{$v->id}}">添加</a></td>
                     <td><a href="{{url('/wxjupdate')}}?id={{$v->id}}">修改</a></td>
-                    <td><a href="">删除</a></td>
+                    <td><a href="{{url('/wxjdel')}}?id={{$v->id}}">删除</a></td>
                 </tr>
             @endforeach
 
