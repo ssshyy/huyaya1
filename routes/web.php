@@ -53,3 +53,5 @@ Route::any('/wxjdel','C\ViewController@wxjdel');//无限极分类添加
 
 
 Route::any('/ewmsc','C\ViewController@ewmsc');//二维码生成
+Route::any('/ewmscc','C\ViewController@ewmsc');//二维码生成
+
